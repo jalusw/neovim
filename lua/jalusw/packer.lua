@@ -119,6 +119,13 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("ibl").setup()
+		end,
+	})
+
 	use("wakatime/vim-wakatime")
 
 	use("ahmedkhalf/project.nvim")
@@ -131,5 +138,6 @@ return require("packer").startup(function(use)
 	use("folke/trouble.nvim")
 	use("folke/zen-mode.nvim")
 	use("folke/flash.nvim")
-	use({ "stevearc/dressing.nvim" })
+	use("stevearc/dressing.nvim")
+	use("kevinhwang91/nvim-bqf")
 end)
