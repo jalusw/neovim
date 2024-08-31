@@ -7,6 +7,7 @@ require("conform").setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
 		-- Conform will run the first available formatter
 		javascript = { "prettierd", "prettier", stop_after_first = true },
+		javascriptreact = { "prettierd", "prettier" },
 		format_on_save = {
 			-- These options will be passed to conform.format()
 			timeout_ms = 500,
@@ -15,9 +16,9 @@ require("conform").setup({
 	},
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = function(args)
+-- 		require("conform").format({ bufnr = args.buf })
+-- 	end,
+-- })
