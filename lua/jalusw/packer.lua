@@ -99,45 +99,15 @@ return require("packer").startup(function(use)
 		},
 	})
 
-	use({ "rose-pine/neovim", as = "rose-pine" })
 	use("nvim-telescope/telescope-symbols.nvim")
 
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "nvim-tree/nvim-web-devicons", opt = true },
-	})
-
-	use({
-		"utilyre/barbecue.nvim",
-		tag = "*",
-		requires = {
-			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
-		},
-		after = "nvim-web-devicons", -- keep this if you're using NvChad
-		config = function()
-			require("barbecue").setup()
-		end,
-	})
-
-	use({
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("ibl").setup()
-		end,
-	})
-
-	use("ahmedkhalf/project.nvim")
-	use("ellisonleao/gruvbox.nvim")
 	use("lewis6991/gitsigns.nvim")
 	use("stevearc/conform.nvim")
 	use("hedyhli/outline.nvim")
 	use("tpope/vim-fugitive")
 	use("tpope/vim-surround")
 	use("folke/trouble.nvim")
-	use("folke/zen-mode.nvim")
 	use("folke/flash.nvim")
-	use("stevearc/dressing.nvim")
 	use("kevinhwang91/nvim-bqf")
 	use("wakatime/vim-wakatime")
 end)
