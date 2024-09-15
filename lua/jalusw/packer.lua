@@ -100,6 +100,17 @@ return require("packer").startup(function(use)
 	})
 
 	use("nvim-telescope/telescope-symbols.nvim")
+	use({
+		"rose-pine/neovim",
+		config = function()
+			require("rose-pine").setup({
+				styles = {
+					transparency = true,
+				},
+			})
+			vim.cmd.colorscheme("rose-pine")
+		end,
+	})
 
 	use("lewis6991/gitsigns.nvim")
 	use("stevearc/conform.nvim")
@@ -109,5 +120,4 @@ return require("packer").startup(function(use)
 	use("folke/trouble.nvim")
 	use("folke/flash.nvim")
 	use("kevinhwang91/nvim-bqf")
-	use("wakatime/vim-wakatime")
 end)
